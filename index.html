@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Travel</title>
+            <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header>
+            <a href="#" class="brand">Travel</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+            <div class="navigation-items">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        </header>
+
+        <section class="home"> 
+            <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+            <div class="content active">
+                <h1>Wonderful.<br><span>Island</span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, labore molestias eligendi sunt consequuntur voluptatibus accusantium qui. Laborum commodi, officia obcaecati mollitia quibusdam quis laboriosam unde! Aliquam consectetur odio provident.</p>
+                <a href="#">Read More</a> 
+            </div>
+
+            <div class="content">
+                <h1>Camping.<br><span>Enjoy</span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, labore molestias eligendi sunt consequuntur voluptatibus accusantium qui. Laborum commodi, officia obcaecati mollitia quibusdam quis laboriosam unde! Aliquam consectetur odio provident.</p>
+                <a href="#">Read More</a> 
+            </div>
+
+            <div class="content">
+                <h1>Adventures.<br><span>off Road</span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, labore molestias eligendi sunt consequuntur voluptatibus accusantium qui. Laborum commodi, officia obcaecati mollitia quibusdam quis laboriosam unde! Aliquam consectetur odio provident.</p>
+                <a href="#">Read More</a> 
+            </div>
+            
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+
+        <section>
+            <div id="about" class="about-us">
+                <h1>About Us</h1>
+                  <div class="wrapper"></div>
+                    <div class="content">
+                        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                        <p>Animi dolor cupiditate sit? Nulla earum tempore libero necessitatibus nesciunt, 
+                            hic numquam expedita natus perspiciatis temporibus sequi recusandae nisi iusto. 
+                            Veniam, quia?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Facere ullam, facilis laudantium soluta iure ea alias laboriosam, labore quisquam 
+                            quaerat maxime necessitatibus atque dolorem blanditiis ad obcaecati ipsa suscipit eaque.</p>
+                             <div class="button">
+                                 <a href="">Read More</a>
+                             </div>
+                        </div>
+                        <div class="image-section">
+                            <img src="img.jpg">
+                    </div>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        <section>
+            <div id="contact" class="contact">
+                <div class="content">
+                    <h1>Contact Us</h1>
+                    <div class="wrapper"></div>
+                </div>
+                <div class="container">
+                    <div class="contactInfo">
+                        <div class="box">
+                            <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Adress</h3>
+                                <p>Rh No.5 Pritish Park,<br>Kamatwada, Nashik,<br>422008</p>
+                            </div>
+                        </div>
+    
+                        <div class="box">
+                            <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Phone</h3>
+                                <p>250-245-4367</p>
+                            </div>
+                        </div>
+    
+                        <div class="box">
+                            <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Email</h3>
+                                <p>kalyanippawar2001@gmail.com</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="contactForm">
+                        <form>
+                            <h2>Send Message</h2>
+                            <div class="inputBox">
+                                <input type="text" name="" required="required">
+                                <span>Full name</span>                       
+                            </div>
+    
+                            <div class="inputBox">
+                                <input type="text" name="" required="required">
+                                <span>Email</span>                       
+                            </div>
+    
+                            <div class="inputBox">
+                                <textarea required="required"></textarea>
+                                <span>Type your Message...</span>                       
+                            </div>
+    
+                            <div class="inputBox">
+                                <input type="submit" name="" value="Send">                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            //JavaScript of responsive navigation menu
+            const  menuBtn = document.querySelector(".menu-btn");
+            const  navigation = document.querySelector(".navigation");
+
+            menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+            });
+
+            //JavaScript for video slider navigation
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content");
+            
+            var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                });
+
+                btns[manual].classList.add("active");
+                slides[manual].classList.add("active");
+                contents[manual].classList.add("active");
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    sliderNav(i);
+                });
+            });
+            </script>
+    </body>
+</html>
